@@ -1,0 +1,457 @@
+/* Globales */
+*::after,
+*::before,
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0 auto;
+    max-width: 1200px;
+    font-family: 'Lato';
+    color: #fff;
+    background-color: #0b0d17;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1{
+    font-size: 24px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.icon-cart{
+    width: 40px;
+    height: 40px;
+    stroke: #fff;
+}
+
+.icon-cart:hover{
+    cursor: pointer;
+}
+
+.container-icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+img{
+    max-width: 100%;
+}
+
+/* Header */
+header{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 32px;
+    background-color: #000;
+    color: #fff;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Centered logo inside header */
+.logo{ display: none; }
+
+/* Header layout like index1 */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 200px;
+}
+
+.brand-link {
+    text-decoration: none;
+    color: #fff;
+    transition: opacity 0.2s ease;
+}
+
+.brand-link:hover {
+    opacity: 0.8;
+}
+
+.brand-link h1 {
+    margin: 0;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header-search {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-container {
+    display: flex;
+    width: clamp(360px, 60vw, 820px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.search-input {
+    flex: 1;
+    padding: 16px 22px;
+    border: none;
+    outline: none;
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    background-color: #fff;
+    color: #333;
+}
+
+.search-input::placeholder { color: #888; }
+.search-input:focus { background-color: #f7f7f7; }
+
+.search-btn {
+    width: 120px;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-left: 1px solid #e5e5e5;
+}
+
+.search-btn img { height: clamp(32px, 4.2vw, 50px); width: auto; object-fit: contain; }
+.search-btn:hover { background-color: #f4f4f4; transform: scale(1.02); }
+
+/* Categories */
+.categories{
+    display: flex;
+    gap: 12px;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+/* Hide native radio controls */
+input[type="radio"]{
+    display: none;
+}
+
+.category-btn{
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.category-btn:hover{
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Subcategories styling */
+.subcategories{
+    display: none;
+    gap: 12px;
+    margin: 12px 0;
+    justify-content: center;
+}
+
+#cat-retro:checked ~ .subcategories#retro-subcategories{
+    display: flex;
+}
+
+#cat-perifericos:checked ~ .subcategories#perifericos-subcategories{
+    display: flex;
+}
+
+.subcategory-btn{
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.subcategory-btn:hover{
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+#subcat-juegos-retro:checked ~ .subcategories#retro-subcategories label[for="subcat-juegos-retro"],
+#subcat-consolas-retro:checked ~ .subcategories#retro-subcategories label[for="subcat-consolas-retro"],
+#subcat-monitores:checked ~ .subcategories#perifericos-subcategories label[for="subcat-monitores"],
+#subcat-teclados:checked ~ .subcategories#perifericos-subcategories label[for="subcat-teclados"],
+#subcat-ratones:checked ~ .subcategories#perifericos-subcategories label[for="subcat-ratones"],
+#subcat-auriculares:checked ~ .subcategories#perifericos-subcategories label[for="subcat-auriculares"],
+#subcat-sillas:checked ~ .subcategories#perifericos-subcategories label[for="subcat-sillas"]{
+    background: rgba(255, 0, 110, 0.25);
+    color: #fff;
+    border-color: rgba(255, 0, 110, 0.5);
+}
+
+#cat-video:checked ~ .container-items .item:not([data-category="video-juegos"]),
+#cat-consola:checked ~ .container-items .item:not([data-category="consola"]),
+#cat-ordenadores:checked ~ .container-items .item:not([data-category="ordenadores"]),
+#cat-retro:checked ~ .container-items .item:not([data-category="zona-retro"]),
+#cat-perifericos:checked ~ .container-items .item:not([data-category="perifericos"]){
+    display: none;
+}
+
+#subcat-juegos-retro:checked ~ .container-items .item[data-category="zona-retro"]:not([data-subcategory="juegos-retro"]){
+    display: none;
+}
+
+#subcat-consolas-retro:checked ~ .container-items .item[data-category="zona-retro"]:not([data-subcategory="consolas-retro"]){
+    display: none;
+}
+
+#subcat-monitores:checked ~ .container-items .item[data-category="perifericos"]:not([data-subcategory="monitores"]){
+    display: none;
+}
+
+#subcat-teclados:checked ~ .container-items .item[data-category="perifericos"]:not([data-subcategory="teclados"]){
+    display: none;
+}
+
+#subcat-ratones:checked ~ .container-items .item[data-category="perifericos"]:not([data-subcategory="ratones"]){
+    display: none;
+}
+
+#subcat-auriculares:checked ~ .container-items .item[data-category="perifericos"]:not([data-subcategory="auriculares"]){
+    display: none;
+}
+
+#subcat-sillas:checked ~ .container-items .item[data-category="perifericos"]:not([data-subcategory="sillas"]){
+    display: none;
+}
+
+#cat-video:checked ~ .categories label[for="cat-video"],
+#cat-consola:checked ~ .categories label[for="cat-consola"],
+#cat-ordenadores:checked ~ .categories label[for="cat-ordenadores"],
+#cat-retro:checked ~ .categories label[for="cat-retro"],
+#cat-perifericos:checked ~ .categories label[for="cat-perifericos"]{
+    background: rgba(255, 0, 110, 0.25);
+    color: #fff;
+    border-color: rgba(255, 0, 110, 0.5);
+}
+
+.container-icon{
+    position: relative;
+}
+
+.count-products{
+    position: absolute;
+    top: 25px;
+    right: -10px;
+
+    background-color: #000;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+#contador-productos{
+    font-size: 12px;
+}
+
+.container-cart-products{
+    position: absolute;
+    top: 50px;
+    right: 0;
+
+    background-color: #fff;
+    width: 400px;
+    z-index: 1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    border-radius: 10px;
+    
+}
+
+.cart-product{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+
+}
+
+.info-cart-product{
+    display: flex;
+    justify-content: space-between;
+    flex: 0.8;
+}
+
+.titulo-producto-carrito{
+    font-size: 20px;
+}
+
+.precio-producto-carrito{
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.cantidad-producto-carrito{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.icon-close{
+    width: 25px;
+    height: 25px;
+}
+
+.icon-close:hover{
+    stroke: red;
+    cursor: pointer;
+}
+
+.cart-total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+}
+
+.cart-total h3{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.total-pagar{
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.hidden-cart{
+    display: none;
+}
+
+
+
+
+/* Main */
+.container-items{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    background: radial-gradient(circle at 20% 20%, rgba(255, 0, 110, 0.08), transparent 28%),
+        radial-gradient(circle at 80% 0%, rgba(0, 212, 255, 0.08), transparent 32%),
+        #0d0f1a;
+    padding: 48px 24px 64px;
+}
+
+.item{
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.item:hover{
+    transform: translateY(-6px);
+    border-color: rgba(255, 0, 110, 0.35);
+    box-shadow: 0 14px 32px rgba(255, 0, 110, 0.18);
+}
+
+.item img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.item figure{
+    overflow: hidden;
+}
+
+.item:hover img{
+    transform: scale(1.2);
+}
+
+.info-product{
+    padding: 14px 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #fff;
+    background: transparent;
+    flex: 1;
+}
+
+.info-product h2 {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.price{
+    font-size: 0.95rem;
+    font-weight: 900;
+    margin: 0;
+    color: #d8d8d8;
+}
+
+.info-product button{
+    border: none;
+    background-color: #000;
+    color: #fff;
+    padding: 12px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: auto;
+}
+
+.info-product button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+}

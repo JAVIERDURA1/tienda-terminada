@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joystick Vibes</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="brand">
+            <a href="index.html" class="brand-link">
+                <h1>JOYSTICK VIBES</h1>
+            </a>
+        </div>
+
+        <div class="header-search">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Busca juegos, consolas, accesorios..."
+                    aria-label="Buscador">
+                <button class="search-btn" aria-label="Buscar">
+                    <img src="images/logo.png" alt="Logo Joystick Vibes">
+                </button>
+            </div>
+        </div>
+
+        <div class="header-actions">
+            <a href="index1.html#categorias" class="btn-categories" aria-label="Ir a categorías">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span>Categorías</span>
+            </a>
+            <div class="container-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                    class="icon-cart">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg>
+
+                <div class="count-products">
+                    <span id="contador-productos">0</span>
+                </div>
+            </div>
+
+            <div class="container-cart-products hidden-cart">
+                <div class="cart-product">
+                    <div class="info-cart-product">
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="icon-close">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </div>
+                <div class="cart-total">
+                    <h3>Total:</h3>
+                    <span class="total-pagar">$200</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Promo Banner under header -->
+    <section class="promo-hero">
+        <div class="promo-hero__overlay">
+            <div class="promo-hero__cards">
+                <article class="promo-card">
+                    <img src="images/Arc Raiders.jpg" alt="Arc Raiders" class="promo-card__img">
+                    <div class="promo-card__body">
+                        <p class="pill pill-green">Nuevo</p>
+                        <h3>Las ofertas más frescas</h3>
+                        <p class="meta">¡Hasta un 90% de descuento!</p>
+                    </div>
+                </article>
+
+                <article class="promo-card">
+                    <img src="images/GTA 5.webp" alt="GTA 5" class="promo-card__img">
+                    <div class="promo-card__body">
+                        <p class="pill pill-blue">Steam · Global</p>
+                        <h3>GTA V Premium Edition</h3>
+                        <p class="meta">Mundo abierto de Rockstar</p>
+                    </div>
+                </article>
+
+                <article class="promo-card">
+                    <img src="images/gaming-laptop-16.webp" alt="Gaming Laptop"
+                        class="promo-card__img promo-card__img--cover">
+                    <div class="promo-card__body">
+                        <p class="pill pill-gray">Portátiles</p>
+                        <h3>Gaming Laptop 16"</h3>
+                        <p class="meta">Rendimiento extremo para jugar</p>
+                    </div>
+                </article>
+
+                <article class="promo-card">
+                    <img src="images/PS5.jpg" alt="PS5" class="promo-card__img promo-card__img--cover">
+                    <div class="promo-card__body">
+                        <p class="pill pill-gray">Sony · Next-Gen</p>
+                        <h3>PlayStation 5</h3>
+                        <p class="meta">Ray tracing y DualSense</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid de destacados (3 columnas) -->
+    <section class="best-section">
+        <div class="best-section__header">
+            <p class="eyebrow">Top del catálogo</p>
+            <h2>Lo mejor para jugar ahora</h2>
+            <p class="sub">Ofertas y hardware listos para tu setup</p>
+        </div>
+        <div class="best-grid">
+            <article class="best-card">
+                <img src="images/Minecraft.jpg" alt="Minecraft" class="best-card__img">
+                <div class="best-card__body">
+                    <p class="pill pill-green">Sandbox</p>
+                    <h3>Minecraft</h3>
+                    <p class="meta">Mojang · Multijugador</p>
+                </div>
+            </article>
+
+            <article class="best-card">
+                <img src="images/battlefield-6.avif" alt="Battlefield 6" class="best-card__img">
+                <div class="best-card__body">
+                    <p class="pill pill-blue">Shooter</p>
+                    <h3>Battlefield 6</h3>
+                    <p class="meta">Clave · Global</p>
+                </div>
+            </article>
+
+            <article class="best-card">
+                <img src="images/Fifa 2026.jpg" alt="FIFA 2026" class="best-card__img">
+                <div class="best-card__body">
+                    <p class="pill pill-gray">Deportes</p>
+                    <h3>FIFA 2026</h3>
+                    <p class="meta">EA Sports · Global</p>
+                </div>
+            </article>
+
+            <article class="best-card">
+                <img src="images/nes.webp" alt="Nintendo NES" class="best-card__img">
+                <div class="best-card__body">
+                    <p class="pill pill-green">Retro</p>
+                    <h3>Nintendo NES</h3>
+                    <p class="meta">Clásicos · Edición especial</p>
+                </div>
+            </article>
+
+            <article class="best-card">
+                <img src="images/xbox Series X.webp" alt="Xbox Series X" class="best-card__img">
+                <div class="best-card__body">
+                    <p class="pill pill-blue">Consola</p>
+                    <h3>Xbox Series X</h3>
+                    <p class="meta">Microsoft · 4K Native</p>
+                </div>
+            </article>
+
+            <article class="best-card">
+                <img src="images/Monitor.webp" alt="Monitor Gaming" class="best-card__img">
+                <div class="best-card__body">
+                    <p class="pill pill-gray">Periféricos</p>
+                    <h3>Monitor Gaming 27"</h3>
+                    <p class="meta">144Hz · QHD</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Joystick Vibes. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>
